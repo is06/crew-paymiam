@@ -2,24 +2,12 @@ import { Restaurant } from "../model/entities";
 
 /*
 
-oya
-wanted café
-petite louise
-les rupins
-pizza grill istanbul
+urfa durum
 bouy bouy
 libertino
-jungle palace
-osè
 taverne de zhao
-gros bao
-madame shawn
-ippudo
-le bec fin
-plomb du cantal
 korean season
 café A
-
 
 pedzouille
 ibrik
@@ -30,6 +18,7 @@ bistrot du croissant
 
 export const restaurants: Restaurant[] = [
   {
+    id: "oya",
     name: "Oya",
     address: "22 rue de Lancry, 75010 Paris",
     location: { lat: 48.87017265647225, lng: 2.3610680651529834 },
@@ -39,5 +28,189 @@ export const restaurants: Restaurant[] = [
     mealPrices: "normal",
     needReservation: false,
     workDistrict: "fsm",
+    hasTakeaway: true,
+    healthiness: "normal",
+  },
+  {
+    id: "3xplus",
+    name: "3 fois plus de piments",
+    address: "184 rue Saint-Martin",
+    location: { lat: 48.862837, lng: 2.352349 },
+    size: "normal",
+    cuisineTypeId: "chinese",
+    dishesSize: "big",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: true,
+    healthiness: "normal",
+  },
+  {
+    id: "wanted",
+    name: "Wanted Café",
+    address: "70 rue du Faubourg Saint-Martin",
+    location: { lat: 48.871606, lng: 2.357218 },
+    size: "normal",
+    cuisineTypeId: "bistrot",
+    dishesSize: "medium",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: false,
+    healthiness: "normal",
+  },
+  {
+    id: "petitelouise",
+    name: "La Petite Louise",
+    address: "65 rue du Faubourg Saint-Martin",
+    location: { lat: 48.871883, lng: 2.357161 },
+    size: "normal",
+    cuisineTypeId: "bistrot",
+    dishesSize: "medium",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: false,
+    healthiness: "normal",
+  },
+  {
+    id: "rupins",
+    name: "Les Rupins",
+    address: "35 boulevard de Magenta",
+    location: { lat: 48.871945, lng: 2.359856 },
+    size: "normal",
+    cuisineTypeId: "bistrot",
+    dishesSize: "medium",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: false,
+    healthiness: "normal",
+  },
+  {
+    id: "pizzagrill",
+    name: "Pizza Grill Instanbul",
+    address: "66 Rue du Faubourg Saint-Denis",
+    location: { lat: 48.87268, lng: 2.354367 },
+    size: "normal",
+    cuisineTypeId: "oriental",
+    dishesSize: "big",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: true,
+    healthiness: "normal",
+  },
+  {
+    id: "junglepalace",
+    name: "Jungle Palace",
+    address: "12 rue de la Fidélité",
+    location: { lat: 48.874636, lng: 2.356756 },
+    size: "big",
+    cuisineTypeId: "bistrot",
+    dishesSize: "medium",
+    mealPrices: "expensive",
+    needReservation: true,
+    workDistrict: "fsm",
+    hasTakeaway: false,
+    healthiness: "normal",
+  },
+  {
+    id: "plombcantal",
+    name: "Le Plomb du Cantal",
+    address: "4 Boulevard St Denis",
+    location: { lat: 48.86927, lng: 2.355251 },
+    size: "normal",
+    cuisineTypeId: "bistrot",
+    dishesSize: "big",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: false,
+    healthiness: "fat",
+  },
+  {
+    id: "becfin",
+    name: "Le Bec Fin",
+    address: "15 Rue du Faubourg Saint-Martin",
+    location: { lat: 48.869792, lng: 2.355953 },
+    size: "normal",
+    cuisineTypeId: "oriental",
+    dishesSize: "big",
+    mealPrices: "cheap",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: false,
+    healthiness: "normal",
+  },
+  {
+    id: "ose",
+    name: "Osè",
+    address: "34 Rue du Faubourg Saint-Martin",
+    location: { lat: 48.870198, lng: 2.3562 },
+    size: "small",
+    cuisineTypeId: "african",
+    dishesSize: "big",
+    mealPrices: "cheap",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: true,
+    healthiness: "fat",
+  },
+  {
+    id: "grosbao",
+    name: "Gros Bao",
+    address: "72 Quai de Jemmapes",
+    location: { lat: 48.871446, lng: 2.365637 },
+    size: "big",
+    cuisineTypeId: "chinese",
+    dishesSize: "medium",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: true,
+    healthiness: "normal",
+  },
+  {
+    id: "madameshawn",
+    name: "Madame Shawn",
+    address: "3 rue des Récollets",
+    location: { lat: 48.874286, lng: 2.362485 },
+    size: "normal",
+    cuisineTypeId: "chinese",
+    dishesSize: "medium",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: true,
+    healthiness: "normal",
+  },
+  {
+    id: "ippudo",
+    name: "Ippudo",
+    address: "6 Place Jacques Bonsergent",
+    location: { lat: 48.871014, lng: 2.361125 },
+    size: "small",
+    cuisineTypeId: "chinese",
+    dishesSize: "medium",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: true,
+    healthiness: "normal",
+  },
+  {
+    id: "yummy",
+    name: "Yummy",
+    address: "8 Rue du 8 Mai 1945",
+    location: { lat: 48.876338, lng: 2.357331 },
+    size: "big",
+    cuisineTypeId: "chinese",
+    dishesSize: "medium",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: true,
+    healthiness: "normal",
   },
 ];

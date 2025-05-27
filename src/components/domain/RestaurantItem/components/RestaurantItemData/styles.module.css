@@ -1,0 +1,14 @@
+.container {
+  font-size: 0.8em;
+  display: flex;
+}
+
+.dataLabel {
+  margin: 0 0.5em 0 0;
+}
+
+.dataValue {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}

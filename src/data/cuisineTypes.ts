@@ -6,7 +6,10 @@ export type CuisineTypeId =
   | "bistrot"
   | "burger"
   | "sushi"
-  | "chinese";
+  | "chinese"
+  | "oriental"
+  | "african"
+  | "mexican";
 
 export const cuisineTypes: CuisineType[] = [
   {
@@ -22,8 +25,8 @@ export const cuisineTypes: CuisineType[] = [
     label: "Bistrot",
   },
   {
-    id: "bistrot",
-    label: "Burger",
+    id: "burger",
+    label: "Burger / Kebab",
   },
   {
     id: "sushi",
@@ -33,4 +36,20 @@ export const cuisineTypes: CuisineType[] = [
     id: "chinese",
     label: "Chinois",
   },
+  {
+    id: "oriental",
+    label: "Oriental",
+  },
+  {
+    id: "african",
+    label: "Africain",
+  },
+  {
+    id: "mexican",
+    label: "Mexicain",
+  },
 ];
+
+export const getCuisineById = (id: string): CuisineType => {
+  return cuisineTypes.filter((c) => c.id === id)[0];
+};
