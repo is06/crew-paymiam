@@ -1,5 +1,26 @@
 .container {
-  display: block;
-  padding: 1em;
-  font-size: 1em;
+  padding: 0.75em 1em;
+  border: 0;
+  border-radius: 500px;
+  font-weight: 600;
+}
+
+.primary {
+  background-color: #003388;
+  color: #ffffff;
+}
+
+.support {
+  background-color: #777777;
+  color: #222222;
+}
+
+.ghost {
+  background-color: transparent;
+  color: #222222;
+}
+
+.selected {
+  background-color: #222222;
+  color: #ffffff;
 }

@@ -5,8 +5,10 @@ import CuisineTypeList from "../CuisineTypeList";
 import { CuisineTypeId } from "../../../data/cuisineTypes";
 import RestaurantList from "../RestaurantList";
 import { DishSize } from "../../../model/entities";
+import Home from "../Home";
 
 export type MainNavigationScreenType =
+  | "home"
   | "main_menu"
   | "list"
   | "typed"
@@ -34,7 +36,7 @@ interface MainNavigationContextType {
 }
 
 const defaultNavigationState: MainNavigationState = {
-  currentScreen: "main_menu",
+  currentScreen: "home",
   currentRestaurantFilter: null,
   currentCuisineTypeFilter: null,
   currentDishSizeFilter: null,
@@ -68,6 +70,7 @@ const App: FC = () => {
       <MainNavigationContext.Provider
         value={{ navigationState, setNavigationState }}
       >
+        {navigationState.currentScreen === "home" && <Home />}
         {navigationState.currentScreen === "main_menu" && <MainMenu />}
         {navigationState.currentScreen === "list" && <RestaurantList />}
         {navigationState.currentScreen === "typed" && (

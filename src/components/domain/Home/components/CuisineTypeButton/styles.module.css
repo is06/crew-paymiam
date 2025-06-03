@@ -1,0 +1,51 @@
+.container {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+}
+
+.bigContainer {
+  border: 0;
+  border-radius: 0.5em;
+  background-color: #eeeeee;
+  min-height: 6em;
+  padding: 0 0.5em 0.75em 0.75em;
+  text-align: left;
+}
+
+.bigContainer .label {
+  font-size: 1.25em;
+  padding: 0 0 0 0.5em;
+}
+
+.smallIcon {
+  border-radius: 0.4em;
+  background-color: #eeeeee;
+  padding: 0.5em 0;
+  min-height: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.smallIcon img {
+  max-height: 48px;
+}
+
+.bigIcon {
+  display: block;
+  text-align: right;
+}
+
+.bigIcon img {
+  max-height: 72px;
+}
+
+.label {
+  display: block;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
+  font-weight: 700;
+  padding: 0.5em 0 0 0;
+}

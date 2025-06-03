@@ -26,7 +26,7 @@ export const cuisineTypes: CuisineType[] = [
   },
   {
     id: "burger",
-    label: "Burger / Kebab",
+    label: "Burger",
   },
   {
     id: "sushi",

@@ -78,7 +78,8 @@ const MainMenu: FC = () => {
 
   return (
     <div className={styles.container}>
-      Je veux manger...
+      <h2>Je veux manger...</h2>
+      {/*
       <Button label="Pas loin" onClick={() => handleButtonClicked("nearby")} />
       <Button
         label="Avec du monde"
@@ -99,6 +100,7 @@ const MainMenu: FC = () => {
         label="Un truc typé..."
         onClick={() => handleButtonClicked("typed")}
       />
+      */}
     </div>
   );
 };

@@ -60,7 +60,6 @@ const RestaurantList: FC = () => {
 
   return (
     <div>
-      <p>currentfilter: {navigationState.currentRestaurantFilter}</p>
       {restaurants.map((restautant) => (
         <div key={restautant.id}>{restautant.name}</div>
       ))}

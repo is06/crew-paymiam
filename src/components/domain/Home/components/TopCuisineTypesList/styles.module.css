@@ -1,0 +1,36 @@
+.container {
+  padding: 1em;
+  display: grid;
+  column-gap: 0.5em;
+  row-gap: 0.5em;
+  align-items: top;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "big1 big1 big2 big2"
+    "small1 small2 small3 small4";
+}
+
+.container button:nth-child(1) {
+  grid-area: big1;
+}
+
+.container button:nth-child(2) {
+  grid-area: big2;
+}
+
+.container button:nth-child(3) {
+  grid-area: small1;
+}
+
+.container button:nth-child(4) {
+  grid-area: small2;
+}
+
+.container button:nth-child(5) {
+  grid-area: small3;
+}
+
+.container button:nth-child(6) {
+  grid-area: small4;
+}
