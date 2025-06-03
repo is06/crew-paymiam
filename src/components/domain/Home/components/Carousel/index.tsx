@@ -17,7 +17,10 @@ const Carousel: FC<Props> = ({
   position,
   onRestaurantClick,
 }) => {
-  const restaurants = getRestaurantsFromFilter(filter, undefined, position);
+  const restaurants = getRestaurantsFromFilter(filter, undefined, position)
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
 
   return (
     <>
@@ -30,6 +33,10 @@ const Carousel: FC<Props> = ({
                 <CarouselItem
                   key={item.id}
                   item={item}
+                  subTitleInfoType={
+                    filter === "nearby" ? "distance" : "default"
+                  }
+                  position={position}
                   onClick={onRestaurantClick}
                 />
               ))}
