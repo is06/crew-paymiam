@@ -11,6 +11,7 @@ export type MainNavigationScreenType =
   | "home"
   | "main_menu"
   | "list"
+  | "details"
   | "typed"
   | "roulette";
 
@@ -28,6 +29,7 @@ interface MainNavigationState {
   currentRestaurantFilter: RestaurantListFilterType | null;
   currentCuisineTypeFilter: CuisineTypeId | null;
   currentDishSizeFilter: DishSize | null;
+  detailsId: string | null;
 }
 
 interface MainNavigationContextType {
@@ -40,6 +42,7 @@ const defaultNavigationState: MainNavigationState = {
   currentRestaurantFilter: null,
   currentCuisineTypeFilter: null,
   currentDishSizeFilter: null,
+  detailsId: null,
 };
 
 export const MainNavigationContext = createContext<MainNavigationContextType>({

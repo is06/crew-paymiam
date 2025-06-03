@@ -1,34 +1,10 @@
 import { FC, useContext, useEffect, useState } from "react";
 import { Restaurant } from "../../../model/entities";
-import { CuisineTypeId } from "../../../data/cuisineTypes";
-import { MainNavigationContext, RestaurantListFilterType } from "../App";
+import { MainNavigationContext } from "../App";
 import {
-  getRestaurantsByCuisineType,
   getRestaurantsByLocation,
+  getRestaurantsFromFilter,
 } from "../../../model/restaurant";
-import { restaurants } from "../../../data/restaurants";
-
-const getRestaurantsFromFilter = (
-  filterType: RestaurantListFilterType | null,
-  filterValue?: unknown
-): Restaurant[] => {
-  switch (filterType) {
-    case "cuisine":
-      return getRestaurantsByCuisineType(filterValue as CuisineTypeId);
-    case "meal_price":
-      return restaurants.filter((r) => r.mealPrices === "cheap");
-    case "dish_size":
-      return restaurants.filter((r) => r.dishesSize === "big");
-    case "fatness":
-      return restaurants.filter((r) => r.healthiness === "healthy");
-    case "takeaway":
-      return restaurants.filter((r) => r.hasTakeaway);
-    case "group":
-      return restaurants.filter((r) => r.size === "big");
-    default:
-      return [];
-  }
-};
 
 const RestaurantList: FC = () => {
   const { navigationState } = useContext(MainNavigationContext);

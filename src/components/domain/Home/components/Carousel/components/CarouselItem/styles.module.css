@@ -1,0 +1,21 @@
+.container {
+  min-width: 20em;
+}
+
+.preview {
+  background-color: rgb(175, 175, 175);
+  height: 8em;
+  border-radius: 0.75em;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 0.9em;
+  margin: 0.5em 0 0 0;
+}
+
+.subTitle {
+  font-size: 0.9em;
+  margin: 0 0 0 0;
+  color: rgb(120, 120, 120);
+}
