@@ -1,11 +1,18 @@
 .container {
-  min-width: 20em;
+  min-width: 16em;
 }
 
 .preview {
+  height: 8em;
   background-color: rgb(175, 175, 175);
+  border-radius: 0.75em;
+}
+
+.preview img {
+  width: 16em;
   height: 8em;
   border-radius: 0.75em;
+  object-fit: cover;
 }
 
 .name {

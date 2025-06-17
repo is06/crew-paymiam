@@ -47,7 +47,10 @@ const CarouselItem: FC<Props> = ({
   return (
     <div className={styles.container} onClick={() => onClick(item.id)}>
       <div className={styles.preview}>
-        <img src="" alt="" />
+        <img
+          src={`images/restaurants/${item.id}.jpg`}
+          alt={`Aperçu de ${item.name}`}
+        />
       </div>
       <p className={styles.name}>{item.name}</p>
       <p className={styles.subTitle}>{smallTitle}</p>

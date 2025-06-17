@@ -213,4 +213,18 @@ export const restaurants: Restaurant[] = [
     hasTakeaway: true,
     healthiness: "normal",
   },
+  {
+    id: "sushirama",
+    name: "Sushirama",
+    address: "95 Rue du Faubourg Saint-Martin",
+    location: { lat: 48.873283, lng: 2.358046 },
+    size: "normal",
+    cuisineTypeId: "sushi",
+    dishesSize: "medium",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: true,
+    healthiness: "normal",
+  },
 ];
