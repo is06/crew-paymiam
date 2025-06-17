@@ -1,19 +1,28 @@
 import { FC, useContext, useEffect, useState } from "react";
 import { Restaurant } from "../../../model/entities";
-import { MainNavigationContext } from "../App";
+import { MainNavigationContext, MainNavigationScreenType } from "../App";
 import {
   getRestaurantsByLocation,
   getRestaurantsFromFilter,
 } from "../../../model/restaurant";
+import RestaurantListItem from "./components/RestaurantListItem";
+
+import styles from "./styles.module.css";
+import {
+  CuisineTypeId,
+  cuisineTypes,
+  getCuisineById,
+} from "../../../data/cuisineTypes";
 
 const RestaurantList: FC = () => {
-  const { navigationState } = useContext(MainNavigationContext);
+  const { navigationState, setNavigationState } = useContext(
+    MainNavigationContext
+  );
 
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
   useEffect(() => {
     if (navigationState.currentRestaurantFilter === "nearby") {
-      console.log("load nearby restaurants");
       window.navigator.geolocation.getCurrentPosition(
         (position: GeolocationPosition) => {
           setRestaurants(
@@ -26,7 +35,6 @@ const RestaurantList: FC = () => {
         }
       );
     } else {
-      console.log("load restaurants from filter");
       setRestaurants(
         getRestaurantsFromFilter(
           navigationState.currentRestaurantFilter,
@@ -36,10 +44,33 @@ const RestaurantList: FC = () => {
     }
   }, [setRestaurants, navigationState]);
 
+  const handleRestaurantClick = (restaurantId: string) => {
+    setNavigationState({
+      ...navigationState,
+      currentScreen: "details",
+      detailsId: restaurantId,
+    });
+  };
+
+  const title = navigationState.currentCuisineTypeFilter
+    ? getCuisineById(navigationState.currentCuisineTypeFilter).label
+    : "";
+
   return (
-    <div>
-      {restaurants.map((restautant) => (
-        <div key={restautant.id}>{restautant.name}</div>
+    <div className={styles.container}>
+      <h2 className={styles.title}>{title}</h2>
+      {restaurants.length === 0 && <div>Aucun restaurant</div>}
+      {restaurants.map((restaurant) => (
+        <RestaurantListItem
+          key={restaurant.id}
+          restaurant={restaurant}
+          subTitleInfoType={
+            navigationState.currentRestaurantFilter === "nearby"
+              ? "distance"
+              : "default"
+          }
+          onClick={handleRestaurantClick}
+        />
       ))}
     </div>
   );

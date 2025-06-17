@@ -227,4 +227,18 @@ export const restaurants: Restaurant[] = [
     hasTakeaway: true,
     healthiness: "normal",
   },
+  {
+    id: "pny",
+    name: "PNY",
+    address: "50 Rue du Faubourg Saint-Denis",
+    location: { lat: 48.8719177, lng: 2.3509895 },
+    size: "small",
+    cuisineTypeId: "burger",
+    dishesSize: "big",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: true,
+    healthiness: "fat",
+  },
 ];

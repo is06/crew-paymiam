@@ -1,10 +1,10 @@
 import { FC } from "react";
-import { getCuisineById } from "../../../data/cuisineTypes";
-import { getDishSizeById } from "../../../data/dishSizes";
-import { getRestaurantSizeById } from "../../../data/restaurantSizes";
 import styles from "./styles.module.css";
 import RestaurantItemData from "./components/RestaurantItemData";
-import { getRestaurantById } from "../../../model/restaurant";
+import { getRestaurantById } from "../../model/restaurant";
+import { getCuisineById } from "../../data/cuisineTypes";
+import { getRestaurantSizeById } from "../../data/restaurantSizes";
+import { getDishSizeById } from "../../data/dishSizes";
 
 interface Props {
   id: string;
