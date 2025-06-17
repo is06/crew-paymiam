@@ -1,5 +1,21 @@
 .container {
+  padding: 0 1em;
+}
+
+.list {
   display: flex;
-  flex-direction: column;
-  gap: 0.5em;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.list .item {
+  width: 25%;
+}
+
+.list .item div {
+  padding: 0.25em;
+}
+
+.list .item button {
+  width: 100%;
 }

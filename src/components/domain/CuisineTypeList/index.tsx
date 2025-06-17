@@ -1,7 +1,7 @@
 import { FC } from "react";
-import Button from "../../ui/Button";
 import { CuisineTypeId, cuisineTypes } from "../../../data/cuisineTypes";
 import styles from "./styles.module.css";
+import CuisineTypeButton from "../Home/components/CuisineTypeButton";
 
 interface Props {
   onCuisineTypeClicked: (cuisineType: CuisineTypeId) => void;
@@ -10,16 +10,23 @@ interface Props {
 const CuisineTypeList: FC<Props> = ({ onCuisineTypeClicked }) => {
   return (
     <div className={styles.container}>
-      {cuisineTypes
-        .sort((a, b) => a.label.localeCompare(b.label))
-        .map((cuisineType) => (
-          <Button
-            intent="primary"
-            key={cuisineType.id}
-            label={cuisineType.label}
-            onClick={() => onCuisineTypeClicked(cuisineType.id)}
-          />
-        ))}
+      <h2>Toutes les cuisines</h2>
+      <div className={styles.list}>
+        {cuisineTypes
+          .sort((a, b) => a.label.localeCompare(b.label))
+          .map((cuisineType) => (
+            <div className={styles.item}>
+              <div>
+                <CuisineTypeButton
+                  label={cuisineType.label}
+                  icon={cuisineType.id}
+                  isBig={false}
+                  onClick={() => onCuisineTypeClicked(cuisineType.id)}
+                />
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };
