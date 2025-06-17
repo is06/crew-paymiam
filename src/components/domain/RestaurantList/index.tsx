@@ -43,6 +43,7 @@ const RestaurantList: FC = () => {
   const handleRestaurantClick = (restaurantId: string) => {
     setNavigationState({
       ...navigationState,
+      previousState: navigationState,
       currentScreen: "details",
       detailsId: restaurantId,
     });

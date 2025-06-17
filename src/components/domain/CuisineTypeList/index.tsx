@@ -15,7 +15,7 @@ const CuisineTypeList: FC<Props> = ({ onCuisineTypeClicked }) => {
         {cuisineTypes
           .sort((a, b) => a.label.localeCompare(b.label))
           .map((cuisineType) => (
-            <div className={styles.item}>
+            <div key={`cuisine_type_${cuisineType.id}`} className={styles.item}>
               <div>
                 <CuisineTypeButton
                   label={cuisineType.label}

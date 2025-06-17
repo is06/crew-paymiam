@@ -1,20 +1,17 @@
 import { FC, createContext, useCallback, useState } from "react";
 import styles from "./styles.module.css";
-import MainMenu from "../MainMenu";
 import CuisineTypeList from "../CuisineTypeList";
 import { CuisineTypeId } from "../../../data/cuisineTypes";
 import RestaurantList from "../RestaurantList";
 import { DishSize } from "../../../model/entities";
 import Home from "../Home";
+import RestaurantDetails from "../RestaurantDetails";
 
 export type MainNavigationScreenType =
   | "home"
-  | "main_menu"
   | "cuisine_types"
   | "list"
-  | "details"
-  | "typed"
-  | "roulette";
+  | "details";
 
 export type RestaurantListFilterType =
   | "cuisine"
@@ -32,6 +29,7 @@ interface MainNavigationState {
   currentDishSizeFilter: DishSize | null;
   detailsId: string | null;
   geolocation: GeolocationPosition | undefined;
+  previousState: MainNavigationState | undefined;
 }
 
 interface MainNavigationContextType {
@@ -46,6 +44,7 @@ const defaultNavigationState: MainNavigationState = {
   currentDishSizeFilter: null,
   detailsId: null,
   geolocation: undefined,
+  previousState: undefined,
 };
 
 export const MainNavigationContext = createContext<MainNavigationContextType>({
@@ -90,14 +89,14 @@ const App: FC = () => {
         value={{ navigationState, setNavigationState }}
       >
         {navigationState.currentScreen === "home" && <Home />}
-        {navigationState.currentScreen === "main_menu" && <MainMenu />}
         {navigationState.currentScreen === "cuisine_types" && (
           <CuisineTypeList onCuisineTypeClicked={handleCuisineTypeClicked} />
         )}
         {navigationState.currentScreen === "list" && <RestaurantList />}
-        {navigationState.currentScreen === "typed" && (
-          <CuisineTypeList onCuisineTypeClicked={handleCuisineTypeClicked} />
-        )}
+        {navigationState.currentScreen === "details" &&
+          navigationState.detailsId && (
+            <RestaurantDetails restaurantId={navigationState.detailsId} />
+          )}
       </MainNavigationContext.Provider>
     </div>
   );

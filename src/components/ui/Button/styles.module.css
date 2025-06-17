@@ -16,6 +16,11 @@
   color: #222222;
 }
 
+.accent {
+  background-color: #ffffff;
+  color: #222222;
+}
+
 .ghost {
   background-color: transparent;
   color: #222222;
@@ -24,4 +29,8 @@
 .selected {
   background-color: #222222;
   color: #ffffff;
+}
+
+.iconButton {
+  padding: 0.5em 0.5em 0.25em 0.5em;
 }

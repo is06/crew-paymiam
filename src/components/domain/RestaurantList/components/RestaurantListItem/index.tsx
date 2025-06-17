@@ -2,8 +2,7 @@ import { FC } from "react";
 import { Restaurant } from "../../../../../model/entities";
 
 import styles from "./styles.module.css";
-import { getDistanceFromLatLngInKm } from "../../../../../util/math";
-import { cuisineTypes } from "../../../../../data/cuisineTypes";
+import RestaurantSubTitle from "../../../RestaurantSubTitle";
 
 interface Props {
   restaurant: Restaurant;
@@ -11,28 +10,9 @@ interface Props {
   onClick: (id: string) => void;
 }
 
-const getSubTitle = (
-  restaurant: Restaurant,
-  position?: GeolocationPosition
-) => {
-  const cuisineLabel = cuisineTypes.filter(
-    (type) => type.id === restaurant.cuisineTypeId
-  )[0].label;
-
-  const km = getDistanceFromLatLngInKm(
-    restaurant.location.lat,
-    restaurant.location.lng,
-    position?.coords.latitude ?? 0,
-    position?.coords.longitude ?? 0
-  );
-  return `${cuisineLabel} - ${Math.round(km * 1000)} m`;
-};
-
-const RestaurantListItem: FC<Props> = ({ restaurant, position }) => {
-  const smallTitle = getSubTitle(restaurant, position);
-
+const RestaurantListItem: FC<Props> = ({ restaurant, position, onClick }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={() => onClick(restaurant.id)}>
       <div className={styles.preview}>
         <img
           src={`images/restaurants/${restaurant.id}.jpg`}
@@ -40,7 +20,11 @@ const RestaurantListItem: FC<Props> = ({ restaurant, position }) => {
         />
       </div>
       <p className={styles.name}>{restaurant.name}</p>
-      <p className={styles.subTitle}>{smallTitle}</p>
+      <RestaurantSubTitle
+        restaurant={restaurant}
+        infoType="distance"
+        position={position}
+      />
     </div>
   );
 };

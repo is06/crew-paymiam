@@ -28,6 +28,7 @@ const Home: FC = () => {
   const handleRestaurantClicked = (id: string) => {
     setNavigationState({
       ...navigationState,
+      previousState: navigationState,
       currentScreen: "details",
       detailsId: id,
     });
