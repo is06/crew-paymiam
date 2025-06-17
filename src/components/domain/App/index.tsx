@@ -10,6 +10,7 @@ import Home from "../Home";
 export type MainNavigationScreenType =
   | "home"
   | "main_menu"
+  | "cuisine_types"
   | "list"
   | "details"
   | "typed"
@@ -88,6 +89,9 @@ const App: FC = () => {
       >
         {navigationState.currentScreen === "home" && <Home />}
         {navigationState.currentScreen === "main_menu" && <MainMenu />}
+        {navigationState.currentScreen === "cuisine_types" && (
+          <CuisineTypeList onCuisineTypeClicked={handleCuisineTypeClicked} />
+        )}
         {navigationState.currentScreen === "list" && <RestaurantList />}
         {navigationState.currentScreen === "typed" && (
           <CuisineTypeList onCuisineTypeClicked={handleCuisineTypeClicked} />

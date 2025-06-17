@@ -33,6 +33,13 @@ const TopCuisineTypesList: FC = () => {
     [navigationState, setNavigationState]
   );
 
+  const handleMoreClicked = useCallback(() => {
+    setNavigationState({
+      ...navigationState,
+      currentScreen: "cuisine_types",
+    });
+  }, [navigationState, setNavigationState]);
+
   return (
     <div className={styles.container}>
       {topCuisineTypes.map((cuisineType, index) => (
@@ -48,7 +55,7 @@ const TopCuisineTypesList: FC = () => {
         label="Plus"
         icon="more"
         isBig={false}
-        onClick={() => handleButtonClick("more")}
+        onClick={handleMoreClicked}
       />
     </div>
   );

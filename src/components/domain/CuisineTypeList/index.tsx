@@ -10,15 +10,16 @@ interface Props {
 const CuisineTypeList: FC<Props> = ({ onCuisineTypeClicked }) => {
   return (
     <div className={styles.container}>
-      {/*cuisineTypes
+      {cuisineTypes
         .sort((a, b) => a.label.localeCompare(b.label))
         .map((cuisineType) => (
           <Button
+            intent="primary"
             key={cuisineType.id}
             label={cuisineType.label}
             onClick={() => onCuisineTypeClicked(cuisineType.id)}
           />
-        ))*/}
+        ))}
     </div>
   );
 };
