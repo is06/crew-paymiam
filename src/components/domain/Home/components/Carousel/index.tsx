@@ -7,6 +7,7 @@ import { RestaurantListFilterType } from "../../../App";
 interface Props {
   title: string;
   filter: RestaurantListFilterType;
+  isTakeAway: boolean;
   position?: GeolocationPosition;
   onRestaurantClick: (id: string) => void;
 }
@@ -14,10 +15,12 @@ interface Props {
 const Carousel: FC<Props> = ({
   title,
   filter,
+  isTakeAway,
   position,
   onRestaurantClick,
 }) => {
   const restaurants = getRestaurantsFromFilter(filter, undefined, position)
+    .filter((r) => r.hasTakeaway === isTakeAway)
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);

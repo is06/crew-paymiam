@@ -12,6 +12,7 @@ const Home: FC = () => {
   const [position, setPosition] = useState<GeolocationPosition | undefined>(
     undefined
   );
+  const [isTakeAway, setIsTakeAway] = useState<boolean>(false);
 
   useEffect(() => {
     window.navigator.geolocation.getCurrentPosition(
@@ -20,6 +21,10 @@ const Home: FC = () => {
       }
     );
   }, [setPosition]);
+
+  const handleTakeAwayFilterOptionSelected = (isTakeAway: boolean) => {
+    setIsTakeAway(isTakeAway);
+  };
 
   const handleRestaurantClicked = (id: string) => {
     setNavigationState({
@@ -31,32 +36,31 @@ const Home: FC = () => {
 
   return (
     <div>
-      <TakeAwayFilter />
+      <TakeAwayFilter onSelected={handleTakeAwayFilterOptionSelected} />
       <TopCuisineTypesList />
       <Carousel
         title="Pas loin"
         filter="nearby"
         position={position}
+        isTakeAway={isTakeAway}
         onRestaurantClick={handleRestaurantClicked}
       />
       <Carousel
         title="J'ai la dalle"
         filter="dish_size"
+        isTakeAway={isTakeAway}
         onRestaurantClick={handleRestaurantClicked}
       />
       <Carousel
         title="Petites bourses"
         filter="meal_price"
-        onRestaurantClick={handleRestaurantClicked}
-      />
-      <Carousel
-        title="A emporter"
-        filter="takeaway"
+        isTakeAway={isTakeAway}
         onRestaurantClick={handleRestaurantClicked}
       />
       <Carousel
         title="On est nombreux"
         filter="group"
+        isTakeAway={isTakeAway}
         onRestaurantClick={handleRestaurantClicked}
       />
     </div>

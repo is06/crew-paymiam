@@ -1,13 +1,35 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import Button from "../../../../ui/Button";
 
 import styles from "./styles.module.css";
 
-const TakeAwayFilter: FC = () => {
+interface Props {
+  onSelected: (isTakeaway: boolean) => void;
+}
+
+const TakeAwayFilter: FC<Props> = ({ onSelected }) => {
+  const [isTakeAway, setIsTakeAway] = useState<boolean>(false);
+
   return (
     <div className={styles.container}>
-      <Button intent="ghost" selected={true} label="Sur place" />
-      <Button intent="ghost" label="À emporter" />
+      <Button
+        intent="ghost"
+        selected={isTakeAway === false}
+        label="Sur place"
+        onClick={() => {
+          onSelected(false);
+          setIsTakeAway(false);
+        }}
+      />
+      <Button
+        intent="ghost"
+        selected={isTakeAway === true}
+        label="À emporter"
+        onClick={() => {
+          onSelected(true);
+          setIsTakeAway(true);
+        }}
+      />
     </div>
   );
 };
