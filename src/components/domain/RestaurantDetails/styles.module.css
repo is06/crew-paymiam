@@ -16,10 +16,20 @@
   left: 1em;
 }
 
-.details {
+.titleContainer {
   padding: 1em;
+  border-bottom: 8px solid #eeeeee;
 }
 
 .title {
   margin: 0;
+}
+
+.details {
+  padding: 1em 0;
+}
+
+.details ul {
+  margin: 0;
+  padding: 0;
 }

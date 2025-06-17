@@ -6,6 +6,7 @@ import Button from "../../ui/Button";
 import { MainNavigationContext } from "../App";
 import RestaurantSubTitle from "../RestaurantSubTitle";
 import { DishSize, MealPrice } from "../../../model/entities";
+import RestaurantDetailItem from "./components/RestaurantDetailItem";
 
 interface Props {
   restaurantId: string;
@@ -35,10 +36,14 @@ const getDishSizeLabel = (dishesSize: DishSize): string => {
 
 const getReservationView = (needReservation: boolean): ReactElement => {
   if (needReservation) {
-    return <li>Réservation recommandée</li>;
+    return <RestaurantDetailItem text="Réservation recommandée" />;
   } else {
     return <></>;
   }
+};
+
+const getRoomSizeView = (): ReactElement => {
+  return <div>test</div>;
 };
 
 // https://www.google.com/maps/place/${restaurant.name}/@${restaurant.location.lat},${restaurant.location.lng},15z
@@ -73,23 +78,32 @@ const RestaurantDetails: FC<Props> = ({ restaurantId }) => {
           </span>
         )}
       </div>
-      <div className={styles.details}>
+      <div className={styles.titleContainer}>
         <h2 className={styles.title}>{restaurant.name}</h2>
         <RestaurantSubTitle
           restaurant={restaurant}
           infoType="distance"
           position={navigationState.geolocation}
         />
+      </div>
+      <div className={styles.details}>
         <ul>
-          <li>{restaurant.address}</li>
+          <RestaurantDetailItem icon="ui/location" text={restaurant.address} />
           {getReservationView(restaurant.needReservation)}
-          <li>
-            {restaurant.hasTakeaway
-              ? "Possibilité de prendre à emporter"
-              : "Uniquement sur place"}
-          </li>
-          <li>{getDishSizeLabel(restaurant.dishesSize)}</li>
-          <li>{getPriceLabel(restaurant.mealPrices)}</li>
+          <RestaurantDetailItem
+            text={
+              restaurant.hasTakeaway
+                ? "Possibilité de prendre à emporter"
+                : "Uniquement sur place"
+            }
+          />
+          <RestaurantDetailItem
+            text={getDishSizeLabel(restaurant.dishesSize)}
+          />
+          <RestaurantDetailItem
+            icon="ui/money"
+            text={getPriceLabel(restaurant.mealPrices)}
+          />
         </ul>
       </div>
     </div>
