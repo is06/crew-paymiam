@@ -19,20 +19,23 @@ const Carousel: FC<Props> = ({
   position,
   onRestaurantClick,
 }) => {
-  const restaurants = getRestaurantsFromFilter(filter, undefined, position)
-    .filter((r) => r.hasTakeaway === isTakeAway)
+  const restaurants = getRestaurantsFromFilter(filter, undefined, position);
+  const takeAwayRestaurants = isTakeAway
+    ? restaurants.filter((r) => r.hasTakeaway === true)
+    : restaurants;
+  const sortedRestaurants = takeAwayRestaurants
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
 
   return (
     <>
-      {restaurants.length > 0 && (
+      {sortedRestaurants.length > 0 && (
         <div className={styles.container}>
           <h3 className={styles.title}>{title}</h3>
           <div className={styles.hScroll}>
             <div className={styles.itemContainer}>
-              {restaurants.map((item) => (
+              {sortedRestaurants.map((item) => (
                 <CarouselItem
                   key={item.id}
                   item={item}
