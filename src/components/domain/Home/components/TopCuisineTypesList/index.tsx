@@ -7,7 +7,6 @@ import CuisineTypeButton from "../CuisineTypeButton";
 import { MainNavigationContext } from "../../../App";
 
 import styles from "./styles.module.css";
-import { CuisineType } from "../../../../../model/entities";
 
 const topCuisineTypes: CuisineTypeId[] = [
   "chinese",

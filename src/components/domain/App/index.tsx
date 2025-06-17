@@ -55,6 +55,17 @@ const App: FC = () => {
     defaultNavigationState
   );
 
+  const handleLogoClicked = useCallback(() => {
+    setNavigationState({
+      ...navigationState,
+      currentScreen: "home",
+      currentRestaurantFilter: null,
+      currentCuisineTypeFilter: null,
+      currentDishSizeFilter: null,
+      detailsId: null,
+    });
+  }, [navigationState, setNavigationState]);
+
   const handleCuisineTypeClicked = useCallback(
     (cuisineType: CuisineTypeId) => {
       setNavigationState({
@@ -69,7 +80,9 @@ const App: FC = () => {
 
   return (
     <div className={styles.container}>
-      <p className={styles.logo}>Crew PayMiam</p>
+      <p className={styles.logo} onClick={handleLogoClicked}>
+        Crew PayMiam
+      </p>
       <MainNavigationContext.Provider
         value={{ navigationState, setNavigationState }}
       >

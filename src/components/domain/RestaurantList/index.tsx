@@ -13,6 +13,7 @@ const RestaurantList: FC = () => {
 
   useEffect(() => {
     if (navigationState.currentRestaurantFilter === "nearby") {
+      console.log("load nearby restaurants");
       window.navigator.geolocation.getCurrentPosition(
         (position: GeolocationPosition) => {
           setRestaurants(
@@ -25,6 +26,7 @@ const RestaurantList: FC = () => {
         }
       );
     } else {
+      console.log("load restaurants from filter");
       setRestaurants(
         getRestaurantsFromFilter(
           navigationState.currentRestaurantFilter,
