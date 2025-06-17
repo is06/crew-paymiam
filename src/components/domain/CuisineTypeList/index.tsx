@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { CuisineTypeId, cuisineTypes } from "../../../data/cuisineTypes";
 import styles from "./styles.module.css";
-import CuisineTypeButton from "../Home/components/CuisineTypeButton";
+import CuisineTypeButton from "../Home/components/TopCuisineTypesList/components/CuisineTypeButton";
 
 interface Props {
   onCuisineTypeClicked: (cuisineType: CuisineTypeId) => void;

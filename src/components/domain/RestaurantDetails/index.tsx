@@ -1,14 +1,47 @@
-import { FC, useCallback, useContext } from "react";
+import { FC, ReactElement, useCallback, useContext } from "react";
 import { getRestaurantById } from "../../../model/restaurant";
 
 import styles from "./styles.module.css";
 import Button from "../../ui/Button";
 import { MainNavigationContext } from "../App";
 import RestaurantSubTitle from "../RestaurantSubTitle";
+import { DishSize, MealPrice } from "../../../model/entities";
 
 interface Props {
   restaurantId: string;
 }
+
+const getPriceLabel = (mealPrice: MealPrice): string => {
+  switch (mealPrice) {
+    case "cheap":
+      return "Pas cher";
+    case "normal":
+      return "Prix abordables";
+    case "expensive":
+      return "Prix assez chers";
+  }
+};
+
+const getDishSizeLabel = (dishesSize: DishSize): string => {
+  switch (dishesSize) {
+    case "small":
+      return "Petites portions";
+    case "medium":
+      return "Portions normales";
+    case "big":
+      return "Portions généreuses";
+  }
+};
+
+const getReservationView = (needReservation: boolean): ReactElement => {
+  if (needReservation) {
+    return <li>Réservation recommandée</li>;
+  } else {
+    return <></>;
+  }
+};
+
+// https://www.google.com/maps/place/${restaurant.name}/@${restaurant.location.lat},${restaurant.location.lng},15z
 
 const RestaurantDetails: FC<Props> = ({ restaurantId }) => {
   const { navigationState, setNavigationState } = useContext(
@@ -49,12 +82,14 @@ const RestaurantDetails: FC<Props> = ({ restaurantId }) => {
         />
         <ul>
           <li>{restaurant.address}</li>
-          <li>{restaurant.needReservation ? "Réservation recommandée" : ""}</li>
+          {getReservationView(restaurant.needReservation)}
           <li>
             {restaurant.hasTakeaway
               ? "Possibilité de prendre à emporter"
               : "Uniquement sur place"}
           </li>
+          <li>{getDishSizeLabel(restaurant.dishesSize)}</li>
+          <li>{getPriceLabel(restaurant.mealPrices)}</li>
         </ul>
       </div>
     </div>

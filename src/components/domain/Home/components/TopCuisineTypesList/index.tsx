@@ -3,7 +3,7 @@ import {
   CuisineTypeId,
   getCuisineById,
 } from "../../../../../data/cuisineTypes";
-import CuisineTypeButton from "../CuisineTypeButton";
+import CuisineTypeButton from "./components/CuisineTypeButton";
 import { MainNavigationContext } from "../../../App";
 
 import styles from "./styles.module.css";
