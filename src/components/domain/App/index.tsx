@@ -31,6 +31,7 @@ interface MainNavigationState {
   currentCuisineTypeFilter: CuisineTypeId | null;
   currentDishSizeFilter: DishSize | null;
   detailsId: string | null;
+  geolocation: GeolocationPosition | undefined;
 }
 
 interface MainNavigationContextType {
@@ -44,6 +45,7 @@ const defaultNavigationState: MainNavigationState = {
   currentCuisineTypeFilter: null,
   currentDishSizeFilter: null,
   detailsId: null,
+  geolocation: undefined,
 };
 
 export const MainNavigationContext = createContext<MainNavigationContextType>({

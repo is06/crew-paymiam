@@ -8,19 +8,18 @@ const Home: FC = () => {
   const { navigationState, setNavigationState } = useContext(
     MainNavigationContext
   );
-
-  const [position, setPosition] = useState<GeolocationPosition | undefined>(
-    undefined
-  );
   const [isTakeAway, setIsTakeAway] = useState<boolean>(false);
 
   useEffect(() => {
     window.navigator.geolocation.getCurrentPosition(
       (position: GeolocationPosition) => {
-        setPosition(position);
+        setNavigationState({
+          ...navigationState,
+          geolocation: position,
+        });
       }
     );
-  }, [setPosition]);
+  }, []);
 
   const handleTakeAwayFilterOptionSelected = (isTakeAway: boolean) => {
     setIsTakeAway(isTakeAway);
@@ -41,7 +40,7 @@ const Home: FC = () => {
       <Carousel
         title="Pas loin"
         filter="nearby"
-        position={position}
+        position={navigationState.geolocation}
         isTakeAway={isTakeAway}
         onRestaurantClick={handleRestaurantClicked}
       />

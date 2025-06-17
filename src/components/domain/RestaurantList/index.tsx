@@ -1,6 +1,6 @@
 import { FC, useContext, useEffect, useState } from "react";
 import { Restaurant } from "../../../model/entities";
-import { MainNavigationContext, MainNavigationScreenType } from "../App";
+import { MainNavigationContext } from "../App";
 import {
   getRestaurantsByLocation,
   getRestaurantsFromFilter,
@@ -8,11 +8,7 @@ import {
 import RestaurantListItem from "./components/RestaurantListItem";
 
 import styles from "./styles.module.css";
-import {
-  CuisineTypeId,
-  cuisineTypes,
-  getCuisineById,
-} from "../../../data/cuisineTypes";
+import { getCuisineById } from "../../../data/cuisineTypes";
 
 const RestaurantList: FC = () => {
   const { navigationState, setNavigationState } = useContext(
@@ -64,11 +60,7 @@ const RestaurantList: FC = () => {
         <RestaurantListItem
           key={restaurant.id}
           restaurant={restaurant}
-          subTitleInfoType={
-            navigationState.currentRestaurantFilter === "nearby"
-              ? "distance"
-              : "default"
-          }
+          position={navigationState.geolocation}
           onClick={handleRestaurantClick}
         />
       ))}
