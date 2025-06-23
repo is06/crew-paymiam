@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect, useState } from "react";
+import { FC, useCallback, useContext, useEffect, useState } from "react";
 import { Restaurant } from "../../../model/entities";
 import { MainNavigationContext } from "../App";
 import {
@@ -17,11 +17,22 @@ const RestaurantList: FC = () => {
 
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
+  const loadSortedRestaurants = useCallback(
+    (restaurants: Restaurant[]) => {
+      const list = restaurants
+        .map((value) => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value);
+      setRestaurants(list);
+    },
+    [setRestaurants]
+  );
+
   useEffect(() => {
     if (navigationState.currentRestaurantFilter === "nearby") {
       window.navigator.geolocation.getCurrentPosition(
         (position: GeolocationPosition) => {
-          setRestaurants(
+          loadSortedRestaurants(
             getRestaurantsByLocation(
               position.coords.latitude,
               position.coords.longitude,
@@ -31,7 +42,7 @@ const RestaurantList: FC = () => {
         }
       );
     } else {
-      setRestaurants(
+      loadSortedRestaurants(
         getRestaurantsFromFilter(
           navigationState.currentRestaurantFilter,
           navigationState.currentCuisineTypeFilter

@@ -11,6 +11,9 @@ const Home: FC = () => {
   const [isTakeAway, setIsTakeAway] = useState<boolean>(false);
 
   useEffect(() => {
+    /*
+    Geolocation request disabled (no need for now)
+
     window.navigator.geolocation.getCurrentPosition(
       (position: GeolocationPosition) => {
         setNavigationState({
@@ -31,6 +34,18 @@ const Home: FC = () => {
         });
       }
     );
+    */
+
+    const defaultPosition = {
+      coords: {
+        latitude: 48.8726871,
+        longitude: 2.357652,
+      },
+    };
+    setNavigationState({
+      ...navigationState,
+      geolocation: defaultPosition as any,
+    });
   }, []);
 
   const handleTakeAwayFilterOptionSelected = (isTakeAway: boolean) => {
@@ -72,6 +87,12 @@ const Home: FC = () => {
       <Carousel
         title="On est nombreux"
         filter="group"
+        isTakeAway={isTakeAway}
+        onRestaurantClick={handleRestaurantClicked}
+      />
+      <Carousel
+        title="Je veux manger sain"
+        filter="fatness"
         isTakeAway={isTakeAway}
         onRestaurantClick={handleRestaurantClicked}
       />

@@ -18,7 +18,7 @@ export const cuisineTypes: CuisineType[] = [
   },
   {
     id: "indian",
-    label: "Indian",
+    label: "Indien",
   },
   {
     id: "bistrot",
