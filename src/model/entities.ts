@@ -13,6 +13,7 @@ export interface Restaurant {
   needReservation: boolean;
   workDistrict: WorkDistrict;
   hasTakeaway: boolean;
+  gmapID?: string;
 }
 
 export type RestaurantSize = "small" | "normal" | "big";

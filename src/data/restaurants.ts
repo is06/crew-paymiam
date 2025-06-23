@@ -3,7 +3,6 @@ import { Restaurant } from "../model/entities";
 /*
 
 korean season
-café A
 
 pedzouille
 ibrik
@@ -26,6 +25,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "V5NuaredEX4Y6kQy6",
   },
   {
     id: "3xplus",
@@ -40,6 +40,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "3sGD1Jophh4NSPYK6",
   },
   {
     id: "wanted",
@@ -54,6 +55,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: false,
     healthiness: "normal",
+    gmapID: "jS2Fgkaj8GEsPXUHA",
   },
   {
     id: "petitelouise",
@@ -68,6 +70,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: false,
     healthiness: "normal",
+    gmapID: "27WS2Uk1bVxyDXWu5",
   },
   {
     id: "rupins",
@@ -82,6 +85,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: false,
     healthiness: "normal",
+    gmapID: "8TuoZZFZ5EYuqRq4A",
   },
   {
     id: "pizzagrill",
@@ -96,6 +100,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "s3SjFTityiPBaWWSA",
   },
   {
     id: "junglepalace",
@@ -110,6 +115,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: false,
     healthiness: "normal",
+    gmapID: "qcp1gMMyW8q2YWQP8",
   },
   {
     id: "plombcantal",
@@ -124,6 +130,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: false,
     healthiness: "fat",
+    gmapID: "3HGhtp26mF4uT2QU9",
   },
   {
     id: "becfin",
@@ -138,6 +145,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: false,
     healthiness: "normal",
+    gmapID: "Y3ihV8iwAxB5BrTM7",
   },
   {
     id: "ose",
@@ -152,6 +160,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "fat",
+    gmapID: "WHUFPpvBuTgCzpQ8A",
   },
   {
     id: "grosbao",
@@ -166,6 +175,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "m59VCofAL1Qt4gU7A",
   },
   {
     id: "madameshawn",
@@ -180,6 +190,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "rxuVXaMTSTd9iua29",
   },
   {
     id: "ippudo",
@@ -194,6 +205,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "x13L59psqVCXfeXDA",
   },
   {
     id: "yummy",
@@ -208,6 +220,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "99ktUWY1wkgzGUwq8",
   },
   {
     id: "sushirama",
@@ -222,6 +235,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "Qw6KMiEBSydcgRxVA",
   },
   {
     id: "pny",
@@ -236,6 +250,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "fat",
+    gmapID: "tDnhkVUmYEKKif977",
   },
   {
     id: "bouybouy",
@@ -250,6 +265,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "fat",
+    gmapID: "mpomjKTca7enqDCdA",
   },
   /*
 
@@ -283,6 +299,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: false,
     healthiness: "fat",
+    gmapID: "HEyETN5dTvXyPuTs6",
   },
   {
     id: "jahjah",
@@ -297,6 +314,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "healthy",
+    gmapID: "3JhitPMQwM62Tk9c6",
   },
   {
     id: "urfa",
@@ -311,6 +329,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "LgrqzWhzi39MT5xWA",
   },
   {
     id: "zhao",
@@ -325,6 +344,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "7T7Mszfd9xRmBVnQ6",
   },
   {
     id: "cafea",
@@ -339,6 +359,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: false,
     healthiness: "normal",
+    gmapID: "54yPS7JWVLQbEwEX6",
   },
   {
     id: "wakoya",
@@ -353,6 +374,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "eMjsJsNwqCGGK4oN7",
   },
   {
     id: "yoshi",
@@ -367,6 +389,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "eCUgDyNiVVVWaFtu6",
   },
   {
     id: "bmk",
@@ -381,6 +404,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "okFMEEStbsucZhxv6",
   },
   {
     id: "banoi",
@@ -395,6 +419,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "CfacAaqHHFWNeext6",
   },
   {
     id: "elguacamole",
@@ -409,6 +434,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "CKENFjAJNU8YEvhi9",
   },
   {
     id: "distrito",
@@ -423,6 +449,7 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "iPwu8p1kQqy7Tg3E7",
   },
   {
     id: "newdelhi",
@@ -437,5 +464,6 @@ export const restaurants: Restaurant[] = [
     workDistrict: "fsm",
     hasTakeaway: true,
     healthiness: "normal",
+    gmapID: "MoaSf5NS5Ec1TJoT6",
   },
 ];

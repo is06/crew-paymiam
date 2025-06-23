@@ -42,8 +42,6 @@ const getReservationView = (needReservation: boolean): ReactElement => {
   }
 };
 
-// https://www.google.com/maps/place/${restaurant.name}/@${restaurant.location.lat},${restaurant.location.lng},15z
-
 const RestaurantDetails: FC<Props> = ({ restaurantId }) => {
   const { navigationState, setNavigationState } = useContext(
     MainNavigationContext
@@ -56,6 +54,12 @@ const RestaurantDetails: FC<Props> = ({ restaurantId }) => {
       setNavigationState(navigationState.previousState);
     }
   }, []);
+
+  const handleAddressClicked = useCallback(() => {
+    if (restaurant.gmapID) {
+      window.open(`https://maps.app.goo.gl/${restaurant.gmapID}`);
+    }
+  }, [restaurant]);
 
   return (
     <div>
@@ -84,7 +88,11 @@ const RestaurantDetails: FC<Props> = ({ restaurantId }) => {
       </div>
       <div className={styles.details}>
         <ul>
-          <RestaurantDetailItem icon="ui/location" text={restaurant.address} />
+          <RestaurantDetailItem
+            icon="ui/location"
+            text={restaurant.address}
+            onClick={handleAddressClicked}
+          />
           {getReservationView(restaurant.needReservation)}
           <RestaurantDetailItem
             text={
