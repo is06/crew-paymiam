@@ -424,4 +424,18 @@ export const restaurants: Restaurant[] = [
     hasTakeaway: true,
     healthiness: "normal",
   },
+  {
+    id: "newdelhi",
+    name: "New Delhi",
+    address: "4 Passage Brady",
+    location: { lat: 48.871075, lng: 2.3562758 },
+    size: "normal",
+    cuisineTypeId: "indian",
+    dishesSize: "big",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: true,
+    healthiness: "normal",
+  },
 ];
