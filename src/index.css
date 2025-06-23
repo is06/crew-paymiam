@@ -17,3 +17,7 @@ input {
   font-family: "Montserrat";
   color: black;
 }
+
+button:hover {
+  cursor: pointer;
+}

@@ -86,7 +86,7 @@ const App: FC = () => {
       <p className={styles.logo} onClick={handleLogoClicked}>
         Crew{" "}
         <span className={styles.text}>
-          <span>Pay</span> <img src="logo192.png" /> <span>Miam</span>
+          <span>Pay</span> <img src="logo192.png" alt="" /> <span>Miam</span>
         </span>
       </p>
       <MainNavigationContext.Provider

@@ -9,12 +9,16 @@ interface Props {
 }
 
 const RestaurantDetailItem: FC<Props> = ({ icon, text, onClick }) => {
+  const hasLink = onClick !== undefined;
+
   return (
     <li className={styles.listItem} onClick={onClick}>
       <span className={styles.listIcon}>
         {icon && <img src={`images/${icon}.png`} alt="" />}
       </span>
-      <span className={styles.listValue}>{text}</span>
+      <span className={styles.listValue}>
+        <span className={hasLink ? styles.link : ""}>{text}</span>
+      </span>
     </li>
   );
 };

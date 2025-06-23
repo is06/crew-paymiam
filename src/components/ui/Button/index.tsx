@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import classNames from "classnames";
 
 export type ButtonIntent = "primary" | "support" | "accent" | "ghost";
+
 interface Props {
   intent: ButtonIntent;
   selected?: boolean;
