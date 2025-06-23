@@ -25,6 +25,7 @@ const TopCuisineTypesList: FC = () => {
     (category: string) => {
       setNavigationState({
         ...navigationState,
+        previousState: navigationState,
         currentScreen: "list",
         currentRestaurantFilter: "cuisine",
         currentCuisineTypeFilter: category as CuisineTypeId,
@@ -36,6 +37,7 @@ const TopCuisineTypesList: FC = () => {
   const handleMoreClicked = useCallback(() => {
     setNavigationState({
       ...navigationState,
+      previousState: navigationState,
       currentScreen: "cuisine_types",
     });
   }, [navigationState, setNavigationState]);

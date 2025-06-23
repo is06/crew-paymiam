@@ -72,6 +72,7 @@ const App: FC = () => {
     (cuisineType: CuisineTypeId) => {
       setNavigationState({
         ...navigationState,
+        previousState: navigationState,
         currentScreen: "list",
         currentRestaurantFilter: "cuisine",
         currentCuisineTypeFilter: cuisineType,

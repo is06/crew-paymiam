@@ -2,8 +2,21 @@
   padding: 0 1em;
 }
 
+.titleContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
 .title {
   font-weight: bold;
   font-size: 1.2em;
-  margin-bottom: 1em;
+}
+
+.back {
+  margin-right: 0.5em;
+}
+
+.back button {
+  background-color: #eeeeee;
 }

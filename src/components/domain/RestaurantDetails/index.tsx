@@ -42,10 +42,6 @@ const getReservationView = (needReservation: boolean): ReactElement => {
   }
 };
 
-const getRoomSizeView = (): ReactElement => {
-  return <div>test</div>;
-};
-
 // https://www.google.com/maps/place/${restaurant.name}/@${restaurant.location.lat},${restaurant.location.lng},15z
 
 const RestaurantDetails: FC<Props> = ({ restaurantId }) => {

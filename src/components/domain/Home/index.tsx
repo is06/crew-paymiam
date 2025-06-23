@@ -44,6 +44,7 @@ const Home: FC = () => {
     };
     setNavigationState({
       ...navigationState,
+      previousState: navigationState,
       geolocation: defaultPosition as any,
     });
   }, []);
