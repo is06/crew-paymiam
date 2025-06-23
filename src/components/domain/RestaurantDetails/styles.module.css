@@ -22,7 +22,9 @@
 }
 
 .title {
-  margin: 0;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin: 0 0 0.25em 0;
 }
 
 .details {

@@ -4,3 +4,9 @@
   margin: 0 0 0.5em 0;
   padding: 1rem;
 }
+
+.logo span {
+  background: linear-gradient(0.25turn, #1fa03f, #c40aab);
+  background-clip: text;
+  color: transparent;
+}

@@ -10,7 +10,7 @@ interface Props {
 const CuisineTypeList: FC<Props> = ({ onCuisineTypeClicked }) => {
   return (
     <div className={styles.container}>
-      <h2>Toutes les cuisines</h2>
+      <h2 className={styles.title}>Toutes les cuisines</h2>
       <div className={styles.list}>
         {cuisineTypes
           .sort((a, b) => a.label.localeCompare(b.label))

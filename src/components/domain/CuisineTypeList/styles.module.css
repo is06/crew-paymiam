@@ -2,10 +2,17 @@
   padding: 0 1em;
 }
 
+.title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
 .list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 0 -0.25em;
 }
 
 .list .item {
