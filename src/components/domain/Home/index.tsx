@@ -17,6 +17,18 @@ const Home: FC = () => {
           ...navigationState,
           geolocation: position,
         });
+      },
+      () => {
+        const defaultPosition = {
+          coords: {
+            latitude: 48.8726871,
+            longitude: 2.357652,
+          },
+        };
+        setNavigationState({
+          ...navigationState,
+          geolocation: defaultPosition as any,
+        });
       }
     );
   }, []);
