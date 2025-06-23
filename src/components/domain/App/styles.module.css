@@ -3,10 +3,18 @@
   font-size: 1.5em;
   margin: 0 0 0.5em 0;
   padding: 1rem;
+  display: flex;
+  gap: 0.3em;
 }
 
-.logo span {
+.logo img {
+  height: 1em;
+}
+
+.logo .text {
   background: linear-gradient(0.25turn, #1fa03f, #c40aab);
   background-clip: text;
   color: transparent;
+  display: flex;
+  gap: 0.1em;
 }

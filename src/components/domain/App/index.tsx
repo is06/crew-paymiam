@@ -84,7 +84,10 @@ const App: FC = () => {
   return (
     <div className={styles.container}>
       <p className={styles.logo} onClick={handleLogoClicked}>
-        Crew <span>PayMiam</span>
+        Crew{" "}
+        <span className={styles.text}>
+          <span>Pay</span> <img src="logo192.png" /> <span>Miam</span>
+        </span>
       </p>
       <MainNavigationContext.Provider
         value={{ navigationState, setNavigationState }}
