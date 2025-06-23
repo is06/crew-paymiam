@@ -17,7 +17,7 @@ const getPriceLabel = (mealPrice: MealPrice): string => {
     case "cheap":
       return "Pas cher";
     case "normal":
-      return "Prix abordables";
+      return "Prix normaux";
     case "expensive":
       return "Prix assez chers";
   }
