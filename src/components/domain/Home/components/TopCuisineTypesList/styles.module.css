@@ -1,4 +1,5 @@
 .container {
+  margin-bottom: 1em;
   padding: 1em;
   display: grid;
   column-gap: 0.5em;

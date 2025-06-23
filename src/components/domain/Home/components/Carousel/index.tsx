@@ -4,6 +4,8 @@ import CarouselItem from "./components/CarouselItem";
 import { getRestaurantsFromFilter } from "../../../../../model/restaurant";
 import { RestaurantListFilterType } from "../../../App";
 
+const LIST_LIMIT = 20;
+
 interface Props {
   title: string;
   filter: RestaurantListFilterType;
@@ -26,7 +28,8 @@ const Carousel: FC<Props> = ({
   const sortedRestaurants = takeAwayRestaurants
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
+    .map(({ value }) => value)
+    .slice(0, LIST_LIMIT - 1);
 
   return (
     <>
