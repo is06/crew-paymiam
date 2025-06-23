@@ -5,10 +5,12 @@
   padding: 1rem;
   display: flex;
   gap: 0.3em;
+  line-height: 1.25em;
 }
 
 .logo img {
   height: 1em;
+  line-height: 1.25em;
 }
 
 .logo .text {
@@ -16,5 +18,7 @@
   background-clip: text;
   color: transparent;
   display: flex;
+  align-items: center;
   gap: 0.1em;
+  line-height: 1.25em;
 }
