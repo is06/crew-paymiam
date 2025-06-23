@@ -1,3 +1,11 @@
+/**
+ * Compute distance between two points in km using haversine formula
+ * @param lat1 number
+ * @param lng1 number
+ * @param lat2 number
+ * @param lng2 number
+ * @returns number
+ */
 export const getDistanceFromLatLngInKm = (
   lat1: number,
   lng1: number,
@@ -18,6 +26,11 @@ export const getDistanceFromLatLngInKm = (
   return d;
 };
 
+/**
+ * Returns the radian value of an angle in degrees
+ * @param deg number
+ * @returns number
+ */
 const deg2rad = (deg: number): number => {
   return deg * (Math.PI / 180);
 };

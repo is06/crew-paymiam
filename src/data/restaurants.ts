@@ -227,7 +227,7 @@ export const restaurants: Restaurant[] = [
     id: "pny",
     name: "PNY",
     address: "50 Rue du Faubourg Saint-Denis",
-    location: { lat: 48.8719177, lng: 2.3509895 },
+    location: { lat: 48.8719213, lng: 2.3514354 },
     size: "small",
     cuisineTypeId: "burger",
     dishesSize: "big",

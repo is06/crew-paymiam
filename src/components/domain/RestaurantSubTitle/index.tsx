@@ -5,6 +5,8 @@ import { getDistanceFromLatLngInKm } from "../../../util/math";
 
 import styles from "./styles.module.css";
 
+const WALKING_SPEED = 3.5; // km/h
+
 export type RestaurantInfoType = "distance" | "default";
 
 interface Props {
@@ -28,7 +30,11 @@ const RestaurantSubTitle: FC<Props> = ({ restaurant, infoType, position }) => {
         position?.coords.latitude ?? 0,
         position?.coords.longitude ?? 0
       );
-      label = `${cuisineLabel} - ${Math.round(km * 1000)} m`;
+      const walkDuration = Math.round((km / WALKING_SPEED) * 60);
+
+      label = `${cuisineLabel} - ${Math.round(
+        km * 1000
+      )} m - ${walkDuration} min`;
       break;
     default:
       label = cuisineLabel;

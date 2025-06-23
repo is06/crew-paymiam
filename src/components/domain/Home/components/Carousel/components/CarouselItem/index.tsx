@@ -4,6 +4,7 @@ import { Restaurant } from "../../../../../../../model/entities";
 import RestaurantSubTitle, {
   RestaurantInfoType,
 } from "../../../../../RestaurantSubTitle";
+
 interface Props {
   item: Restaurant;
   subTitleInfoType: RestaurantInfoType;
