@@ -466,4 +466,18 @@ export const restaurants: Restaurant[] = [
     healthiness: "normal",
     gmapID: "MoaSf5NS5Ec1TJoT6",
   },
+  {
+    id: "dailysyrien",
+    name: "Le daily syrien veggie",
+    address: "72 Rue du Faubourg Saint-Denis",
+    location: { lat: 48.8728775, lng: 2.3546581 },
+    size: "normal",
+    cuisineTypeId: "oriental",
+    dishesSize: "medium",
+    mealPrices: "normal",
+    needReservation: false,
+    workDistrict: "fsm",
+    hasTakeaway: true,
+    healthiness: "healthy",
+  },
 ];
